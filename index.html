@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clearview Global – Global Marketing Strategies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --purple: #6366f1;
+            --purple-dark: #4f46e5;
+            --purple-light: #a5b4fc;
+            --navy: #0d0d2b;
+            --navy-2: #1e1b4b;
+            --navy-3: #1a1053;
+            --text: #1a1a2e;
+            --text-muted: #6b7280;
+            --text-soft: #374151;
+            --bg-light: #f8f9ff;
+            --border: #e8e8f0;
+            --white: #ffffff;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ─── NAV ─── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: white;
+            border-bottom: 1px solid #ebebf5;
+            padding: 0 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+            transition: box-shadow 0.2s;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            background: var(--navy-2);
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 15px;
+            letter-spacing: -0.5px;
+            flex-shrink: 0;
+        }
+
+        .logo-text {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .logo-text span { color: var(--purple); }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-soft);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--purple); }
+
+        .nav-btn {
+            background: var(--navy-2);
+            color: white;
+            padding: 10px 22px;
+            border-radius: 9px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+        .nav-btn:hover {
+            background: #2d2a70;
+            transform: translateY(-1px);
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(150deg, #0d0d2b 0%, #161250 35%, #2d1b69 65%, #1e1b4b 100%);
+            padding: 110px 6% 90px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-orb-1 {
+            position: absolute;
+            top: -120px;
+            left: -80px;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(99,102,241,0.35) 0%, transparent 65%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-orb-2 {
+            position: absolute;
+            bottom: -100px;
+            right: -60px;
+            width: 380px;
+            height: 380px;
+            background: radial-gradient(circle, rgba(139,92,246,0.25) 0%, transparent 65%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-orb-3 {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 300px;
+            background: radial-gradient(ellipse, rgba(99,102,241,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.18);
+            color: rgba(255,255,255,0.9);
+            padding: 7px 18px;
+            border-radius: 24px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 32px;
+            backdrop-filter: blur(6px);
+        }
+
+        .hero h1 {
+            position: relative;
+            font-size: clamp(44px, 6.5vw, 72px);
+            font-weight: 900;
+            color: white;
+            line-height: 1.05;
+            letter-spacing: -1.5px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: var(--purple-light);
+            display: block;
+        }
+
+        .hero > p {
+            position: relative;
+            font-size: 17px;
+            color: rgba(255,255,255,0.68);
+            max-width: 500px;
+            margin: 0 auto 60px;
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            position: relative;
+            display: flex;
+            gap: 72px;
+            justify-content: center;
+        }
+
+        .hero-stat-num {
+            font-size: 38px;
+            font-weight: 800;
+            color: white;
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+
+        .hero-stat-lbl {
+            font-size: 13px;
+            color: rgba(255,255,255,0.55);
+            margin-top: 6px;
+        }
+
+        /* ─── SHARED ─── */
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #eeefff;
+            color: var(--purple);
+            padding: 6px 15px;
+            border-radius: 24px;
+            font-size: 12.5px;
+            font-weight: 600;
+            margin-bottom: 18px;
+            letter-spacing: 0.2px;
+        }
+
+        /* ─── SERVICES ─── */
+        .services {
+            padding: 100px 6%;
+            background: white;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 800;
+            color: var(--text);
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+            margin-bottom: 14px;
+        }
+
+        .services h2 span { color: var(--purple); }
+
+        .services > p {
+            font-size: 16px;
+            color: var(--text-muted);
+            max-width: 520px;
+            margin: 0 auto 56px;
+            line-height: 1.7;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            max-width: 1080px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .svc-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 30px 28px;
+            transition: transform 0.22s, box-shadow 0.22s;
+        }
+
+        .svc-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 36px rgba(99,102,241,0.13);
+        }
+
+        .svc-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--navy-2);
+            border-radius: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            font-size: 22px;
+        }
+
+        .svc-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 9px;
+        }
+
+        .svc-card > p {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            line-height: 1.65;
+        }
+
+        .svc-card ul {
+            list-style: none;
+        }
+
+        .svc-card ul li {
+            font-size: 13.5px;
+            color: var(--text-soft);
+            padding: 4px 0 4px 18px;
+            position: relative;
+        }
+
+        .svc-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--purple);
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        /* ─── CTA BANNER ─── */
+        .cta-banner {
+            background: var(--bg-light);
+            padding: 80px 6%;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cta-banner h2 {
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -0.5px;
+            margin-bottom: 14px;
+        }
+
+        .cta-banner p {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--purple);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 11px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+            box-shadow: 0 4px 16px rgba(99,102,241,0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--purple-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(99,102,241,0.4);
+        }
+
+        /* ─── ABOUT ─── */
+        .about {
+            padding: 100px 6%;
+            background: white;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .about-header h2 {
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 800;
+            color: var(--text);
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+        }
+
+        .about-header h2 span { color: var(--purple); }
+
+        .about-header > p {
+            font-size: 16px;
+            color: var(--text-muted);
+            max-width: 520px;
+            margin: 14px auto 0;
+            line-height: 1.7;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+            max-width: 1080px;
+            margin: 0 auto 80px;
+        }
+
+        .about-text h3 {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -0.3px;
+            margin-bottom: 18px;
+            line-height: 1.25;
+        }
+
+        .about-text p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.75;
+            margin-bottom: 28px;
+        }
+
+        .about-list {
+            list-style: none;
+        }
+
+        .about-list li {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            font-size: 15px;
+            color: var(--text-soft);
+            padding: 9px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .about-list li:last-child { border-bottom: none; }
+
+        .about-list li::before {
+            content: '';
+            display: block;
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
+            background: var(--purple);
+            border-radius: 50%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+            background-size: 13px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .about-image {
+            border-radius: 22px;
+            overflow: hidden;
+            height: 360px;
+            background: linear-gradient(135deg, #e8e8f8 0%, #c7d2fe 50%, #ddd6fe 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .about-image-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .about-image-icon {
+            font-size: 64px;
+            opacity: 0.7;
+        }
+
+        .about-image-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--navy-2);
+            opacity: 0.7;
+        }
+
+        /* ─── VALUES ─── */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .val-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 30px 22px;
+            text-align: center;
+        }
+
+        .val-icon {
+            width: 50px;
+            height: 50px;
+            background: #ede9fe;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 22px;
+        }
+
+        .val-card h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .val-card p {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        /* ─── TRACK RECORD ─── */
+        .track {
+            padding: 100px 6%;
+            background: var(--bg-light);
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .track h2 {
+            font-size: clamp(26px, 3.5vw, 38px);
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+
+        .track > p {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 56px;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .track-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        .track-stat {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px 16px;
+        }
+
+        .track-num {
+            font-size: 44px;
+            font-weight: 900;
+            color: var(--purple);
+            letter-spacing: -1.5px;
+            line-height: 1;
+        }
+
+        .track-lbl {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        /* ─── PORTFOLIO ─── */
+        .portfolio {
+            padding: 100px 6%;
+            background: white;
+        }
+
+        .portfolio-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .portfolio-header h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+
+        .portfolio-header p {
+            font-size: 15px;
+            color: var(--text-muted);
+            max-width: 520px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .port-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: transform 0.22s, box-shadow 0.22s;
+        }
+
+        .port-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 32px rgba(0,0,0,0.09);
+        }
+
+        .port-thumb {
+            height: 190px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 52px;
+        }
+
+        .port-thumb-1 { background: linear-gradient(135deg, #fce7f3, #fdf2f8); }
+        .port-thumb-2 { background: linear-gradient(135deg, #dbeafe, #ede9fe); }
+        .port-thumb-3 { background: linear-gradient(135deg, #fef9c3, #fff7ed); }
+
+        .port-body { padding: 24px; }
+
+        .port-tag {
+            display: inline-block;
+            background: #eef2ff;
+            color: var(--purple);
+            padding: 4px 12px;
+            border-radius: 14px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .port-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 9px;
+        }
+
+        .port-card > .port-body > p {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .port-results {
+            list-style: none;
+            border-top: 1px solid #f3f4f6;
+            padding-top: 14px;
+            margin-bottom: 14px;
+        }
+
+        .port-results li {
+            font-size: 13px;
+            color: var(--text-soft);
+            padding: 3px 0 3px 16px;
+            position: relative;
+        }
+
+        .port-results li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--purple);
+            font-weight: 700;
+            font-size: 11px;
+        }
+
+        .port-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .port-chips span {
+            background: #f3f4f6;
+            color: var(--text-muted);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11.5px;
+        }
+
+        /* ─── CONTACT ─── */
+        .contact {
+            padding: 100px 6%;
+            background: var(--bg-light);
+            border-top: 1px solid var(--border);
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .contact-header h2 {
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 800;
+            color: var(--text);
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-header h2 span { color: var(--purple); }
+
+        .contact-header p {
+            font-size: 16px;
+            color: var(--text-muted);
+            max-width: 500px;
+            margin: 16px auto 0;
+            line-height: 1.7;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            max-width: 900px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 28px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 22px;
+        }
+
+        .c-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--purple);
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .c-item-text label {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 3px;
+        }
+
+        .c-item-text span {
+            font-size: 14px;
+            color: var(--text-soft);
+            line-height: 1.5;
+        }
+
+        .help-box {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 32px;
+        }
+
+        .help-box h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+
+        .help-list {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .help-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14.5px;
+            color: var(--text-soft);
+            padding: 9px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .help-list li:last-child { border-bottom: none; }
+
+        .help-list li::before {
+            content: '✓';
+            color: var(--purple);
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .consult-box {
+            background: #faf5ff;
+            border: 1px solid #e9d5ff;
+            border-radius: 13px;
+            padding: 18px 20px;
+        }
+
+        .consult-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #7c3aed;
+            margin-bottom: 7px;
+        }
+
+        .consult-box p {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--navy);
+            color: white;
+            padding: 72px 6% 32px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2.2fr 1fr 1fr;
+            gap: 56px;
+            margin-bottom: 56px;
+        }
+
+        .footer-brand .logo-icon {
+            background: rgba(255,255,255,0.1);
+            margin-bottom: 18px;
+        }
+
+        .footer-brand .logo-text {
+            color: white;
+            font-size: 16px;
+        }
+
+        .footer-nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .footer-brand > p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.75;
+            margin-bottom: 22px;
+            max-width: 340px;
+        }
+
+        .footer-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.65);
+            text-decoration: none;
+            margin-bottom: 22px;
+            transition: color 0.2s;
+        }
+
+        .footer-email:hover { color: var(--purple-light); }
+
+        .footer-addr {
+            font-size: 13px;
+            color: rgba(255,255,255,0.45);
+            line-height: 1.85;
+        }
+
+        .footer-addr strong {
+            display: block;
+            color: rgba(255,255,255,0.75);
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .footer-col h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 11px;
+        }
+
+        .footer-col ul li a {
+            text-decoration: none;
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover { color: var(--purple-light); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.35);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom-links a {
+            font-size: 13px;
+            color: rgba(255,255,255,0.35);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-bottom-links a:hover { color: rgba(255,255,255,0.65); }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 900px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .values-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-content { grid-template-columns: 1fr; }
+            .about-image { height: 260px; }
+            .track-stats { grid-template-columns: repeat(2, 1fr); }
+            .portfolio-grid { grid-template-columns: 1fr; max-width: 480px; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .footer-brand { grid-column: 1 / -1; }
+        }
+
+        @media (max-width: 640px) {
+            nav { padding: 0 5%; }
+            .nav-links { display: none; }
+            .hero { padding: 80px 5% 64px; }
+            .hero-stats { gap: 36px; }
+            .hero-stat-num { font-size: 30px; }
+            .services, .about, .track, .portfolio, .contact { padding: 72px 5%; }
+            .services-grid { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+            .track-stats { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+            .footer-bottom { flex-direction: column; align-items: flex-start; }
+            .footer-bottom-links { gap: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══ NAVIGATION ═══ -->
+    <nav id="top">
+        <a href="#top" class="nav-logo">
+            <div class="logo-icon">CG</div>
+            <span class="logo-text">Clearview <span>Global</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="nav-btn">Get Started</a>
+    </nav>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero">
+        <div class="hero-orb-1"></div>
+        <div class="hero-orb-2"></div>
+        <div class="hero-orb-3"></div>
+        <div class="hero-badge">🚀 International Marketing Success</div>
+        <h1>Global Marketing<span>Strategies</span></h1>
+        <p>We transform your business with innovative international marketing strategies and specialized training to grow your company globally.</p>
+        <div class="hero-stats">
+            <div>
+                <div class="hero-stat-num">100+</div>
+                <div class="hero-stat-lbl">Projects Completed</div>
+            </div>
+            <div>
+                <div class="hero-stat-num">98%</div>
+                <div class="hero-stat-lbl">Client Satisfaction</div>
+            </div>
+            <div>
+                <div class="hero-stat-num">25+</div>
+                <div class="hero-stat-lbl">Countries Reached</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SERVICES ═══ -->
+    <section class="services" id="services">
+        <div class="section-label">⚙️ Our Services</div>
+        <h2>Complete Solutions for<br><span>Your Success</span></h2>
+        <p>We offer a complete ecosystem of marketing and training services to take your business to the next level</p>
+
+        <div class="services-grid">
+            <div class="svc-card">
+                <div class="svc-icon">🌐</div>
+                <h3>International Marketing</h3>
+                <p>Expand your business globally with targeted strategies for international markets.</p>
+                <ul>
+                    <li>Global market analysis</li>
+                    <li>Content localization</li>
+                    <li>Cross-border strategies</li>
+                </ul>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">📈</div>
+                <h3>Growth Marketing</h3>
+                <p>Sustainable growth through data-driven strategies and continuous optimization.</p>
+                <ul>
+                    <li>Funnel optimization</li>
+                    <li>Advanced A/B testing</li>
+                    <li>Analytics &amp; reporting</li>
+                </ul>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">📢</div>
+                <h3>Digital Advertising</h3>
+                <p>Multi-platform advertising campaigns to maximize ROI and conversions.</p>
+                <ul>
+                    <li>Google Ads</li>
+                    <li>Meta Advertising</li>
+                    <li>LinkedIn Marketing</li>
+                </ul>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">📚</div>
+                <h3>Corporate Training</h3>
+                <p>Specialized courses to develop marketing skills in your team.</p>
+                <ul>
+                    <li>Hands-on workshops</li>
+                    <li>Certifications</li>
+                    <li>Personalized mentoring</li>
+                </ul>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">🎯</div>
+                <h3>Brand Strategy</h3>
+                <p>We develop your brand identity to position it effectively in the market.</p>
+                <ul>
+                    <li>Brand positioning</li>
+                    <li>Visual identity</li>
+                    <li>Brand guidelines</li>
+                </ul>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">📊</div>
+                <h3>Marketing Analytics</h3>
+                <p>Advanced performance measurement for data-driven decisions.</p>
+                <ul>
+                    <li>Custom dashboards</li>
+                    <li>KPI tracking</li>
+                    <li>Predictive analytics</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ CTA BANNER ═══ -->
+    <section class="cta-banner">
+        <h2>Ready to Transform Your Business?</h2>
+        <p>Let's discuss how our services can help you achieve your marketing goals and expand globally.</p>
+        <a href="#contact" class="btn-primary">💬 Contact Us</a>
+    </section>
+
+    <!-- ═══ ABOUT ═══ -->
+    <section class="about" id="about">
+        <div class="about-header">
+            <div class="section-label">👥 About Us</div>
+            <h2>Your Trusted Global<br><span>Marketing Agency</span></h2>
+            <p>With over 10 years of experience in international marketing, we help businesses of all sizes achieve success in global markets.</p>
+        </div>
+
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Experts in Transforming Visions into Reality</h3>
+                <p>Clearview Global was born from a passion for strategic marketing and experience gained working with international companies. Our mission is simple: help businesses grow through innovative marketing strategies, specialized training, and a data-driven approach.</p>
+                <ul class="about-list">
+                    <li>Team of certified digital marketing experts</li>
+                    <li>Agile methodologies focused on results</li>
+                    <li>Continuous support and strategic consulting</li>
+                    <li>Advanced technologies for data analysis</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="Fotopag/pexels-olia-danilevich-8145359.jpg" alt="Clearview Global Team" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+        </div>
+
+        <div class="values-grid">
+            <div class="val-card">
+                <div class="val-icon">🎯</div>
+                <h3>Measurable Results</h3>
+                <p>Every strategy is focused on achieving concrete and measurable objectives.</p>
+            </div>
+            <div class="val-card">
+                <div class="val-icon">⚡</div>
+                <h3>Continuous Innovation</h3>
+                <p>We use the latest technologies and methodologies to ensure success.</p>
+            </div>
+            <div class="val-card">
+                <div class="val-icon">🤝</div>
+                <h3>Strategic Partnership</h3>
+                <p>We're not just suppliers, but true partners in your business success.</p>
+            </div>
+            <div class="val-card">
+                <div class="val-icon">⭐</div>
+                <h3>Operational Excellence</h3>
+                <p>High quality standards at every project phase, from strategy to execution.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ TRACK RECORD ═══ -->
+    <section class="track">
+        <h2>Our Track Record</h2>
+        <p>Numbers that speak for themselves – our commitment to excellence delivers measurable results.</p>
+        <div class="track-stats">
+            <div class="track-stat">
+                <div class="track-num">500+</div>
+                <div class="track-lbl">Projects Completed</div>
+            </div>
+            <div class="track-stat">
+                <div class="track-num">25+</div>
+                <div class="track-lbl">Countries Served</div>
+            </div>
+            <div class="track-stat">
+                <div class="track-num">98%</div>
+                <div class="track-lbl">Success Rate</div>
+            </div>
+            <div class="track-stat">
+                <div class="track-num">10+</div>
+                <div class="track-lbl">Years of Experience</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ CONTACT ═══ -->
+    <section class="contact" id="contact">
+        <div class="contact-header">
+            <div class="section-label">📞 Contact</div>
+            <h2>Let's Build<br><span>Your Success</span></h2>
+            <p>Have a project in mind? Want to grow your business? Contact us for a free consultation and discover how we can help you.</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="contact-item">
+                    <div class="c-icon">✉️</div>
+                    <div class="c-item-text">
+                        <label>Email</label>
+                        <span>finance@clear-view-global.com</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="c-icon">📍</div>
+                    <div class="c-item-text">
+                        <label>Address</label>
+                        <span>10225 Ulmerton Rd, 3D, Largo Florida 33771</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="c-icon">🕐</div>
+                    <div class="c-item-text">
+                        <label>Hours</label>
+                        <span>Mon-Fri 9:00–18:00 EST</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="help-box">
+                <h3>How We Can Help You</h3>
+                <ul class="help-list">
+                    <li>Strategic Consulting</li>
+                    <li>International Marketing</li>
+                    <li>Growth Marketing</li>
+                    <li>Corporate Training</li>
+                    <li>Brand Strategy</li>
+                    <li>Digital Advertising</li>
+                </ul>
+                <div class="consult-box">
+                    <div class="consult-title">💡 Free Consultation</div>
+                    <p>Every new client receives a free 45-minute strategic consultation to analyze goals and opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-nav-logo">
+                    <div class="logo-icon">CG</div>
+                    <span class="logo-text">Clearview <span>Global</span></span>
+                </div>
+                <p>Your trusted international marketing agency. We transform visions into reality through innovative strategies and measurable results.</p>
+                <a href="mailto:finance@clear-view-global.com" class="footer-email">✉️ finance@clear-view-global.com</a>
+                <div class="footer-addr">
+                    <strong>Clearview Global LLC</strong>
+                    10225 Ulmerton Rd, 3D<br>
+                    Largo, Florida 33771, USA<br>
+                    EIN: 36-5178473
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">International Marketing</a></li>
+                    <li><a href="#services">Growth Marketing</a></li>
+                    <li><a href="#services">Digital Advertising</a></li>
+                    <li><a href="#services">Corporate Training</a></li>
+                    <li><a href="#services">Brand Strategy</a></li>
+                    <li><a href="#services">Marketing Analytics</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Clearview Global LLC. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Disclaimer</a>
+                <a href="#">Legal Notice</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Nav shadow on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            nav.style.boxShadow = window.scrollY > 8
+                ? '0 2px 24px rgba(0,0,0,0.07)'
+                : 'none';
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Fade-in on scroll
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.08 });
+
+        document.querySelectorAll('.svc-card, .val-card, .track-stat, .port-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

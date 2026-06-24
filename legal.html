@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal – Clearview Global LLC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --purple: #6366f1; --purple-dark: #4f46e5; --purple-light: #a5b4fc;
+            --navy: #0d0d2b; --navy-2: #1e1b4b;
+            --text: #1a1a2e; --text-muted: #6b7280; --text-soft: #374151;
+            --bg-light: #f8f9ff; --border: #e8e8f0;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; background: white; }
+
+        /* NAV */
+        nav { position: sticky; top: 0; z-index: 999; background: white; border-bottom: 1px solid #ebebf5; padding: 0 6%; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+        .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-icon { width: 38px; height: 38px; background: var(--navy-2); border-radius: 9px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 15px; flex-shrink: 0; }
+        .logo-text { font-size: 17px; font-weight: 700; color: var(--text); }
+        .logo-text span { color: var(--purple); }
+        .nav-back { background: var(--bg-light); border: 1px solid var(--border); color: var(--text-soft); padding: 9px 20px; border-radius: 9px; font-size: 14px; font-weight: 500; text-decoration: none; transition: background 0.2s; }
+        .nav-back:hover { background: #eeeeff; color: var(--purple); }
+
+        /* HERO */
+        .hero { background: linear-gradient(150deg, #0d0d2b 0%, #161250 40%, #1e1b4b 100%); padding: 60px 6% 50px; text-align: center; }
+        .hero h1 { font-size: clamp(26px, 4vw, 42px); font-weight: 900; color: white; letter-spacing: -1px; margin-bottom: 10px; }
+        .hero p { font-size: 15px; color: rgba(255,255,255,0.55); }
+
+        /* TABS */
+        .tabs-wrap { background: white; border-bottom: 1px solid var(--border); position: sticky; top: 68px; z-index: 99; }
+        .tabs { display: flex; max-width: 860px; margin: 0 auto; padding: 0 6%; overflow-x: auto; gap: 0; scrollbar-width: none; }
+        .tabs::-webkit-scrollbar { display: none; }
+        .tab-btn { flex-shrink: 0; padding: 16px 20px; font-size: 14px; font-weight: 500; color: var(--text-muted); border: none; background: none; cursor: pointer; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s; white-space: nowrap; }
+        .tab-btn:hover { color: var(--text); }
+        .tab-btn.active { color: var(--purple); border-bottom-color: var(--purple); font-weight: 600; }
+
+        /* CONTENT */
+        .content { max-width: 860px; margin: 0 auto; padding: 56px 6% 100px; }
+        .panel { display: none; }
+        .panel.active { display: block; }
+
+        .updated { font-size: 12.5px; color: var(--text-muted); margin-bottom: 40px; }
+
+        h2 { font-size: 20px; font-weight: 800; color: var(--text); margin: 36px 0 10px; letter-spacing: -0.2px; }
+        h2:first-of-type { margin-top: 0; }
+        p { font-size: 15px; color: var(--text-soft); line-height: 1.8; margin-bottom: 12px; }
+        ul { padding-left: 20px; margin-bottom: 12px; }
+        li { font-size: 15px; color: var(--text-soft); line-height: 1.8; margin-bottom: 4px; }
+        a { color: var(--purple); }
+        strong { color: var(--text); }
+
+        .note { background: var(--bg-light); border-left: 3px solid var(--purple); border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: 14px; color: var(--text-soft); line-height: 1.7; }
+
+        /* INFO CARD for Legal Notice */
+        .info-card { background: var(--bg-light); border: 1px solid var(--border); border-radius: 14px; padding: 28px 32px; margin: 16px 0; }
+        .info-row { display: flex; gap: 16px; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 14.5px; }
+        .info-row:last-child { border-bottom: none; }
+        .info-row .lbl { color: var(--text-muted); font-weight: 500; min-width: 140px; flex-shrink: 0; }
+        .info-row .val { color: var(--text-soft); }
+
+        /* FOOTER */
+        footer { background: var(--navy); padding: 40px 6%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+        footer p { font-size: 13px; color: rgba(255,255,255,0.4); }
+        .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+        .footer-links a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--purple-light); }
+
+        @media (max-width: 600px) {
+            .info-row { flex-direction: column; gap: 4px; }
+            .info-row .lbl { min-width: unset; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-logo">
+        <div class="logo-icon">CG</div>
+        <span class="logo-text">Clearview <span>Global</span></span>
+    </a>
+    <a href="index.html" class="nav-back">← Back to Home</a>
+</nav>
+
+<div class="hero">
+    <h1>Legal</h1>
+    <p>Clearview Global LLC · Largo, Florida, USA</p>
+</div>
+
+<div class="tabs-wrap">
+    <div class="tabs">
+        <button class="tab-btn active" onclick="show('privacy', this)">Privacy Policy</button>
+        <button class="tab-btn" onclick="show('terms', this)">Terms of Service</button>
+        <button class="tab-btn" onclick="show('cookies', this)">Cookie Policy</button>
+        <button class="tab-btn" onclick="show('disclaimer', this)">Disclaimer</button>
+        <button class="tab-btn" onclick="show('notice', this)">Legal Notice</button>
+    </div>
+</div>
+
+<div class="content">
+
+    <!-- ── PRIVACY POLICY ── -->
+    <div class="panel active" id="privacy">
+        <p class="updated">Last updated: June 24, 2026</p>
+
+        <h2>Who we are</h2>
+        <p><strong>Clearview Global LLC</strong>, 10225 Ulmerton Rd, 3D, Largo, Florida 33771, USA (EIN: 36-5178473) is the data controller for this website and all associated services. Contact: <a href="mailto:finance@clear-view-global.com">finance@clear-view-global.com</a></p>
+
+        <h2>What we collect</h2>
+        <p>We collect information you give us directly — your name, email, company name, and any messages you send us. We also collect standard technical data automatically: IP address, browser type, pages visited, and how long you spent on them.</p>
+
+        <h2>Why we collect it</h2>
+        <ul>
+            <li>To respond to your inquiries and deliver services you've contracted</li>
+            <li>To manage the business relationship and send service-related updates</li>
+            <li>To improve how the website works</li>
+            <li>To comply with legal obligations (tax records, etc.)</li>
+        </ul>
+
+        <h2>Legal basis (for EU users)</h2>
+        <p>If you're in the EU/EEA (including Italy or France), our legal basis is: <strong>contract performance</strong> for clients, <strong>legitimate interests</strong> for responding to inquiries and improving the site, and <strong>consent</strong> for marketing emails and non-essential cookies.</p>
+
+        <h2>Who we share data with</h2>
+        <p>We don't sell your data. We share it only with service providers who help us run the business (hosting, email, analytics) — all bound by data processing agreements. We may also share it if required by law.</p>
+
+        <h2>International transfers</h2>
+        <p>We're based in the US, which means EU data is transferred internationally. Where required, we rely on Standard Contractual Clauses (SCCs) as the legal transfer mechanism.</p>
+
+        <h2>How long we keep it</h2>
+        <p>Client data: for the duration of the relationship plus 7 years (legal/tax obligations). Inquiry data: 2 years from last contact. Analytics: up to 14 months.</p>
+
+        <h2>Your rights</h2>
+        <p>EU/EEA residents have the right to access, correct, delete, restrict, or export their data, and to object to processing. Email us at <a href="mailto:finance@clear-view-global.com">finance@clear-view-global.com</a> and we'll respond within 30 days.</p>
+        <p>If you're not happy with our response, you can complain to your local authority — <a href="https://www.garanteprivacy.it" target="_blank">Garante</a> (Italy) or <a href="https://www.cnil.fr" target="_blank">CNIL</a> (France).</p>
+
+        <h2>Cookies</h2>
+        <p>See the Cookie Policy tab for details.</p>
+
+        <h2>Security</h2>
+        <p>We use HTTPS encryption and access controls to protect your data. In the event of a breach affecting your rights, we'll notify the relevant authority within 72 hours and you without undue delay.</p>
+    </div>
+
+    <!-- ── TERMS OF SERVICE ── -->
+    <div class="panel" id="terms">
+        <p class="updated">Last updated: June 24, 2026</p>
+
+        <div class="note">By using our website or engaging our services, you agree to these Terms. These are B2B terms — they govern relationships with businesses, not individual consumers.</div>
+
+        <h2>Who this is between</h2>
+        <p><strong>Clearview Global LLC</strong> ("we", "us") and any business or individual ("Client") that uses our website or hires us for services.</p>
+
+        <h2>Our services</h2>
+        <p>We provide international marketing consulting — strategy, digital advertising, brand development, growth marketing, analytics, and training. The specific scope for any engagement is agreed in writing (a proposal or statement of work) before work begins.</p>
+
+        <h2>Payment</h2>
+        <p>Fees are in USD as specified in your proposal. We typically require a 50% deposit upfront before starting work. Invoices unpaid after 30 days incur a 1.5%/month late fee. We don't refund deposits once work has begun.</p>
+
+        <h2>Your responsibilities</h2>
+        <p>You agree to give us timely access to the information, accounts, and approvals we need. Delays on your end may push back timelines or trigger additional fees. Any changes to the agreed scope need to be requested in writing.</p>
+
+        <h2>Intellectual property</h2>
+        <p>Once paid in full, you own the final deliverables we create specifically for you. We keep ownership of our tools, processes, and pre-existing frameworks. We may reference your name in our portfolio unless you ask us not to.</p>
+
+        <h2>Confidentiality</h2>
+        <p>We keep your non-public business information confidential and won't share it with third parties. This works both ways. This obligation survives the end of our engagement for 3 years.</p>
+
+        <h2>No guarantee of results</h2>
+        <p>Marketing outcomes depend on many factors outside our control — platform algorithms, market conditions, competition, product quality. We don't guarantee specific revenue, ROAS, conversion rates, or any other metric.</p>
+
+        <h2>Our liability</h2>
+        <p>Our total liability to you won't exceed the fees you paid us in the 3 months before the issue arose. We're not liable for lost profits, lost revenue, or indirect losses of any kind.</p>
+
+        <h2>Ending the engagement</h2>
+        <p>Either party can end the engagement with 30 days' written notice. You pay for all work completed up to that point. Either party can terminate immediately if the other materially breaches these Terms and doesn't fix it within 14 days of notice.</p>
+
+        <h2>Governing law</h2>
+        <p>These Terms are governed by the laws of New Mexico, USA. Disputes go to binding arbitration under AAA rules. EU businesses retain any mandatory protections under their local law.</p>
+    </div>
+
+    <!-- ── COOKIE POLICY ── -->
+    <div class="panel" id="cookies">
+        <p class="updated">Last updated: June 24, 2026</p>
+
+        <h2>What are cookies?</h2>
+        <p>Cookies are small text files stored on your device when you visit a website. They help the site work properly and give us insight into how people use it.</p>
+
+        <h2>What we use</h2>
+        <p><strong>Essential cookies</strong> — required for the site to work. No consent needed.</p>
+        <p><strong>Analytics cookies</strong> (Google Analytics) — show us which pages are visited and how long people stay. We only use these with your consent if you're in the EU/EEA.</p>
+        <p><strong>Marketing cookies</strong> (Meta Pixel, Google Ads) — used to measure ad performance. EU/EEA consent required before these are placed.</p>
+
+        <h2>Your choices</h2>
+        <p>When you first visit, you'll see a cookie banner where you can accept or reject non-essential cookies. You can change your mind any time by clearing your cookies or adjusting your browser settings.</p>
+        <ul>
+            <li><a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Opt out of Google Analytics</a></li>
+            <li><a href="https://www.facebook.com/settings?tab=ads" target="_blank">Manage Meta ad preferences</a></li>
+            <li><a href="https://youronlinechoices.eu/" target="_blank">Your Online Choices (EU)</a></li>
+        </ul>
+
+        <h2>Third parties</h2>
+        <p>Analytics and advertising cookies are set by Google and Meta respectively. Their own privacy policies govern how they use that data — see <a href="https://policies.google.com/privacy" target="_blank">Google</a> and <a href="https://www.facebook.com/privacy/policy/" target="_blank">Meta</a>.</p>
+
+        <div class="note">🇮🇹 🇫🇷 Italian and French visitors: in line with Garante and CNIL guidance, non-essential cookies are only placed after your explicit consent.</div>
+    </div>
+
+    <!-- ── DISCLAIMER ── -->
+    <div class="panel" id="disclaimer">
+        <p class="updated">Last updated: June 24, 2026</p>
+
+        <h2>Website content</h2>
+        <p>Everything on this website is for general information only. We do our best to keep it accurate, but we don't guarantee it's complete or up to date. Don't rely on it as legal, financial, or professional advice — speak to a qualified expert for that.</p>
+
+        <h2>Marketing results</h2>
+        <p>Figures like "500+ projects" or "98% success rate" reflect historical context and are not guarantees of future performance. Results depend on many factors we can't control — market conditions, platform algorithms, competition, and how your business operates. Individual results will vary.</p>
+
+        <h2>Third-party platforms</h2>
+        <p>We work on platforms like Meta Ads and Google Ads. We're not affiliated with or endorsed by these companies. We're not responsible for changes in their policies, algorithm shifts, account suspensions, or data discrepancies between their reporting and other tools.</p>
+
+        <h2>External links</h2>
+        <p>Links to third-party websites are for convenience only. We have no control over their content and take no responsibility for what you find there.</p>
+
+        <h2>Liability</h2>
+        <p>To the extent allowed by law, Clearview Global LLC is not liable for any losses — direct or indirect — arising from use of this website or reliance on its content.</p>
+    </div>
+
+    <!-- ── LEGAL NOTICE ── -->
+    <div class="panel" id="notice">
+        <p class="updated">Last updated: June 24, 2026</p>
+
+        <p>This Legal Notice fulfills transparency requirements for websites accessible within the EU (<em>Mentions Légales / Informativa Legale</em>).</p>
+
+        <div class="info-card">
+            <div class="info-row"><span class="lbl">Legal name</span><span class="val">Clearview Global LLC</span></div>
+            <div class="info-row"><span class="lbl">Entity type</span><span class="val">Limited Liability Company (LLC), New Mexico, USA</span></div>
+            <div class="info-row"><span class="lbl">EIN</span><span class="val">36-5178473</span></div>
+            <div class="info-row"><span class="lbl">Address</span><span class="val">10225 Ulmerton Rd, 3D · Largo, Florida 33771 · USA</span></div>
+            <div class="info-row"><span class="lbl">Email</span><span class="val"><a href="mailto:finance@clear-view-global.com">finance@clear-view-global.com</a></span></div>
+            <div class="info-row"><span class="lbl">Website</span><span class="val"><a href="https://www.clear-view-global.com">www.clear-view-global.com</a></span></div>
+            <div class="info-row"><span class="lbl">Hosting</span><span class="val">Vercel Inc., 340 Pine Street, Suite 600, San Francisco, CA 94104, USA</span></div>
+            <div class="info-row"><span class="lbl">Business hours</span><span class="val">Mon–Fri, 9:00 AM – 6:00 PM EST</span></div>
+        </div>
+
+        <h2>Nature of business</h2>
+        <p>Clearview Global LLC provides B2B international marketing services. We do not sell products directly to private consumers via this website.</p>
+
+        <h2>Intellectual property</h2>
+        <p>All content on this website is owned by Clearview Global LLC or used with permission. Reproduction without written consent is prohibited.</p>
+
+        <h2>Dispute resolution (EU)</h2>
+        <p>The European Commission provides an <a href="https://ec.europa.eu/consumers/odr/" target="_blank">Online Dispute Resolution platform</a>. As our services are B2B, this may not apply, but we're always open to resolving issues directly.</p>
+
+        <h2>Privacy contact</h2>
+        <p>For all data protection matters: <a href="mailto:finance@clear-view-global.com">finance@clear-view-global.com</a>. See also our Privacy Policy tab.</p>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Clearview Global LLC. All rights reserved.</p>
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="mailto:finance@clear-view-global.com">Contact</a>
+    </div>
+</footer>
+
+<script>
+    function show(id, btn) {
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        btn.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Support deep linking: legal.html#terms
+    const hash = location.hash.replace('#', '');
+    const validTabs = ['privacy', 'terms', 'cookies', 'disclaimer', 'notice'];
+    if (hash && validTabs.includes(hash)) {
+        const btn = [...document.querySelectorAll('.tab-btn')].find(b => b.getAttribute('onclick').includes(`'${hash}'`));
+        if (btn) show(hash, btn);
+    }
+</script>
+
+</body>
+</html>
